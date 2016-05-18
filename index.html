@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.min" rel="stylesheet">
   </head>
   <body>
    <input type="radio" id="btn-1" name="toggle" checked>
@@ -190,23 +191,31 @@
           </div>
         </div>
       </div>
-      <div class="map">
 
-        <div class="pin-image"></div>
-        <div class="container">
-          <div class="map-address">
-            <p class="address-text-1"> Адрес главного офиса и офлайн магазина:</p>
-            <p class="address-text-2"> ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
-            <p class="address-text-1"> Для заказов по телефону:</p>
-            <p class="address-text-2"> 8 812 450-25-25</p>
-            <p class="address-text-1"> (с 10 до 20 ежедневно)</p>
-            <a class="address-btn" href="#">Форма обратной связи</a>
-            <form  class="name-form" action="#" method="get">
-              <label for="name"><input type="text" id="name" name="name" value="Как вас зовут?"></label>
-            </form>
+
+      <div class="map">
+        <div id="map" class="map_wrapper"></div>
+          <div class="contacts">
+            <p>Адрес главного офиса и<br>офлайн магазина:<br>
+            <span class="adress">ул. Большая Конюшенная 19/8, Санкт-Петербург</span><br>
+              Для заказов по телефону:<br>
+            <span class="tel">8 812 450-25-25</span><br>
+              (с 10 до 20 ежедневно)</p>
+            <a class="comm" href="communication.html"><button class="clik communication">Форма обратной связи</button></a>
+            <div class="modal_content">
+              <button class="close" type="button" title="Закрыть">Закрыть</button>
+              <p>Мы обязательно вам ответим!</p>
+                <form class="comm_form" action="https://echo.htmlacademy.ru" method="post">
+                  <input class="name" type="text" name="name" placeholder="Как вас зовут?">
+                  <input class="mail" type="email"  name="email" placeholder="Ваша почта для ответа?">
+                  <input class="write" type="text"  name="text" placeholder="Напишите что-нибудь...">
+                  <button class="clik btn" type="submit">Отправить</button>
+                </form>
+            </div>
           </div>
-        </div>
       </div>
+
+
       <footer class="main-footer">
         <div class="container clearfix">
           <section class="footer-social">
@@ -228,6 +237,8 @@
         </div>
       </footer>
     </div>
-    <script src="js/script.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="js/map.js" type="text/javascript"></script>
+    <script src="js/communication.js"></script>
   </body>
 </html>
